@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="uk" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Model_Passport - Головний корпус Львівської політехніки</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              lime: '#ccff80',
+              accent: '#adc6ff',
+              dark: '#0b1326',
+              card: '#131b2e',
+              border: '#424936',
+              muted: '#c2cab0',
+              text: '#dae2fd',
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      background-color: #0b1326;
+      color: #dae2fd;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .glass-card {
+      background: rgba(19, 27, 46, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(140, 148, 124, 0.25);
+    }
+    .glass-card:hover {
+      border-color: rgba(204, 255, 128, 0.35);
+    }
+    .text-glow {
+      text-shadow: 0 0 16px rgba(204, 255, 128, 0.45);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0b1326;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #424936;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#0b1326] text-[#dae2fd] flex flex-col antialiased selection:bg-[#ccff80] selection:text-[#0b1326]">
+
+  <!-- Main Single Continuous Page -->
+  <main class="w-full max-w-5xl mx-auto pt-6 sm:pt-8 pb-16 px-3 sm:px-6 flex flex-col gap-10 flex-1">
+
+    <!-- 1. PASSPORT SECTION -->
+    <section id="passport" class="flex flex-col gap-5">
+      <!-- Hero Banner -->
+      <div class="relative w-full rounded-2xl overflow-hidden glass-card min-h-[50vh] sm:min-h-[58vh] flex flex-col justify-end p-5 sm:p-8 border border-[#8c947c]/30">
+        <div class="absolute inset-0 z-0">
+          <img
+            alt="Lviv Polytechnic Main Building"
+            class="w-full h-full object-cover object-center opacity-85 transition-transform duration-700 hover:scale-105"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwGZ8pV9M61A-_uWvxvL_FI6K8OfT2Fc1FliSiHLozcxlNL2CgM6qVtFa5VYGtBk7B1RbkogEsrnnK_zBkTak1mOxYYjlNLDbQpSlb8G6zDeGJwz7A1m28ZdykqANKEB8XICKISAzapydkSXsyiSnZ_PPU-c5J0lUG0lA4nrVSjd4u6_f24JmaOQFvGUmTF8fyPpWp3FTExEqN1mfD0ReOD9eWHzaYKD7m5GkJ2GPTSaC03PaNlyBvF1nPgRlygkuwUEc"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0b1326] via-[#0b1326]/65 to-transparent"></div>
+        </div>
+
+        <div class="absolute top-4 right-4 z-20 flex items-center gap-2">
+          <button id="audio-btn" onclick="toggleAudioGuide()" class="p-2.5 rounded-full bg-[#131b2e]/80 border border-[#424936]/60 text-[#dae2fd] hover:text-[#ccff80] backdrop-blur-md transition-all" title="Аудіогід архітектури">
+            <i data-lucide="volume-2" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <div class="relative z-10 flex flex-col gap-3 mt-auto">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <span class="px-3 py-1 bg-[#131b2e]/90 backdrop-blur-md rounded-full text-[11px] font-mono font-bold border border-[#8c947c]/30 flex items-center gap-2 text-[#dae2fd]">
+              <span class="w-2 h-2 rounded-full bg-[#ccff80] animate-pulse"></span>
+              <span>NFC AUTHENTICATED</span>
+            </span>
+            <span class="text-xs font-mono font-semibold text-[#ccff80] px-3 py-1 rounded-full bg-[#131b2e]/80 border border-[#424936]/50">
+              № 001 / 001
+            </span>
+          </div>
+
+          <div>
+            <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight uppercase text-[#dae2fd]">
+              ГОЛОВНИЙ КОРПУС
+            </h1>
+            <p class="text-sm sm:text-base text-[#c2cab0] mt-2 max-w-3xl leading-relaxed">
+              Збудований 1816 / 1877 року за проєктом видатного архітектора Юліана Захаревича (Julian Zachariewicz) у стилі неоренесанс. Пам'ятка архітектури національного значення (охоронний № 1251).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- University Metrics & Scale Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="glass-card rounded-2xl p-5 md:col-span-2 border border-[#8c947c]/20">
+          <div class="text-[11px] font-mono font-bold text-[#c2cab0] mb-4 uppercase tracking-widest border-b border-[#424936]/30 pb-2 flex items-center justify-between">
+            <span>University Metrics</span>
+            <span class="text-[10px] text-[#ccff80]">2026 OFFICIAL ARCHIVE</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between p-3.5 bg-[#131b2e]/60 rounded-xl border border-[#424936]/30 hover:border-[#ccff80]/40 transition-colors">
+                <span class="text-xs font-mono text-[#c2cab0]">Топ-200 Україна 2026</span>
+                <span class="text-2xl sm:text-3xl font-bold text-[#ccff80] font-mono">#1</span>
+              </div>
+              <div class="flex items-center justify-between p-3.5 bg-[#131b2e]/60 rounded-xl border border-[#424936]/30 hover:border-[#ccff80]/40 transition-colors">
+                <span class="text-xs font-mono text-[#c2cab0]">Консолідований рейтинг 2026</span>
+                <span class="text-2xl sm:text-3xl font-bold text-[#ccff80] font-mono">#3</span>
+              </div>
+            </div>
+
+            <div class="flex flex-col items-center justify-center p-4 bg-[#131b2e]/40 rounded-xl border border-[#424936]/30 text-center">
+              <div class="text-xs font-mono text-[#dae2fd] mb-1 uppercase tracking-widest opacity-70">
+                Кількість студентів 2026
+              </div>
+              <span class="text-3xl sm:text-4xl font-extrabold text-[#ccff80] font-mono text-glow">
+                32 651
+              </span>
+              <span class="text-xs font-mono text-[#c2cab0] mt-1 uppercase tracking-wider">
+                Студентів
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 md:col-span-2">
+          <div class="glass-card rounded-2xl p-5 flex flex-col items-center justify-center text-center gap-1 border border-[#8c947c]/20 hover:border-[#ccff80]/30 transition-all">
+            <i data-lucide="building-2" class="w-7 h-7 text-[#ccff80] mb-1"></i>
+            <span class="text-2xl sm:text-3xl font-bold text-[#dae2fd] font-mono">35+</span>
+            <span class="text-[11px] font-mono text-[#c2cab0] uppercase">Навчальних корпусів</span>
+          </div>
+          <div class="glass-card rounded-2xl p-5 flex flex-col items-center justify-center text-center gap-1 border border-[#8c947c]/20 hover:border-[#adc6ff]/30 transition-all">
+            <i data-lucide="building" class="w-7 h-7 text-[#adc6ff] mb-1"></i>
+            <span class="text-2xl sm:text-3xl font-bold text-[#dae2fd] font-mono">15</span>
+            <span class="text-[11px] font-mono text-[#c2cab0] uppercase">Гуртожитків</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- History Facts Cards -->
+      <div class="glass-card rounded-2xl p-5 border border-[#8c947c]/20">
+        <div class="text-[11px] font-mono font-bold text-[#c2cab0] mb-4 uppercase tracking-widest border-b border-[#424936]/30 pb-2 flex items-center justify-between">
+          <span>Історичні факти та особливості</span>
+          <span class="text-[10px] text-[#ccff80] font-mono">ХРОНІКА 1816–2026</span>
+        </div>
+
+        <div class="space-y-3">
+          <div class="p-4 bg-[#131b2e]/60 border border-[#424936]/30 rounded-xl hover:border-[#ccff80]/40 transition-all">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#ccff80]/10 text-[#ccff80] border border-[#ccff80]/20">МИСТЕЦТВО & АРХІТЕКТУРА</span>
+              <span class="text-[11px] font-mono text-[#c2cab0]">1880-ті</span>
+            </div>
+            <h4 class="text-sm font-semibold text-[#dae2fd] mb-1">Унікальна Актова зала з полотнами Матейка</h4>
+            <p class="text-xs sm:text-sm text-[#c2cab0] leading-relaxed">
+              Зала збереглася практично в автентичному вигляді з ХІХ століття. Її стіни прикрашають 11 монументальних картин-алегорій «Тріумф прогресу», створених за ескізами видатного польського художника Яна Матейка.
+            </p>
+          </div>
+
+          <div class="p-4 bg-[#131b2e]/60 border border-[#424936]/30 rounded-xl hover:border-[#ccff80]/40 transition-all">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#ccff80]/10 text-[#ccff80] border border-[#ccff80]/20">СКУЛЬПТУРА & СПАДЩИНА</span>
+              <span class="text-[11px] font-mono text-[#c2cab0]">1877</span>
+            </div>
+            <h4 class="text-sm font-semibold text-[#dae2fd] mb-1">Читальна зала старої бібліотеки та маскарони</h4>
+            <p class="text-xs sm:text-sm text-[#c2cab0] leading-relaxed">
+              На дерев'яних книжкових шафах збереглися маскарони — декоративні скульптурні голови, деякі з яких є автопортретами архітектора Юліана Захаревича та скульптора Леонардо Марконі.
+            </p>
+          </div>
+
+          <div class="p-4 bg-[#131b2e]/60 border border-[#424936]/30 rounded-xl hover:border-[#ccff80]/40 transition-all">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#ccff80]/10 text-[#ccff80] border border-[#ccff80]/20">ГЕРАЛЬДИКА & БРЕНД</span>
+              <span class="text-[11px] font-mono text-[#c2cab0]">1877 — 2026</span>
+            </div>
+            <h4 class="text-sm font-semibold text-[#dae2fd] mb-1">Офіційний символ-логотип університету</h4>
+            <p class="text-xs sm:text-sm text-[#c2cab0] leading-relaxed">
+              Фасад головного корпусу з його характерними неоренесансними рисами та аркадою став візитівкою університету — саме його зображення розміщене на офіційному логотипі Львівської політехніки.
+            </p>
+          </div>
+
+          <div class="p-4 bg-[#131b2e]/60 border border-[#424936]/30 rounded-xl hover:border-[#ccff80]/40 transition-all">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#ccff80]/10 text-[#ccff80] border border-[#ccff80]/20">ОХОРОННИЙ СТАТУС</span>
+              <span class="text-[11px] font-mono text-[#c2cab0]">№ 1251</span>
+            </div>
+            <h4 class="text-sm font-semibold text-[#dae2fd] mb-1">Статус національної пам'ятки</h4>
+            <p class="text-xs sm:text-sm text-[#c2cab0] leading-relaxed">
+              Головний корпус внесено до Державного реєстру нерухомих пам'яток України під номером 1251 як об'єкт культурної спадщини національного значення.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SPECIFICATIONS SECTION -->
+    <section id="specifications" class="flex flex-col gap-5">
+      <div class="glass-card rounded-2xl p-6 border border-[#8c947c]/30">
+        <h2 class="text-xl font-bold font-mono text-[#dae2fd] mb-4 flex items-center gap-2">
+          <i data-lucide="compass" class="w-5 h-5 text-[#ccff80]"></i>
+          <span>ТЕХНІЧНІ ТА АРХІТЕКТУРНІ ХАРАКТЕРИСТИКИ</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Card 1 -->
+          <div class="p-4 bg-[#131b2e]/70 border border-[#424936]/40 rounded-xl">
+            <div class="text-xs font-mono font-bold text-[#ccff80] mb-3 uppercase tracking-wider">АРХІТЕКТУРНІ ПАРАМЕТРИ</div>
+            <div class="space-y-2 text-xs font-mono">
+              <div class="flex justify-between border-b border-[#424936]/30 pb-1">
+                <span class="text-[#c2cab0]">Архітектурний стиль:</span>
+                <span class="text-[#dae2fd] font-semibold">Історизм, неоренесанс</span>
+              </div>
+              <div class="flex justify-between border-b border-[#424936]/30 pb-1">
+                <span class="text-[#c2cab0]">Кількість поверхів:</span>
+                <span class="text-[#dae2fd] font-semibold">4 поверхи + цоколь</span>
+              </div>
+              <div class="flex justify-between border-b border-[#424936]/30 pb-1">
+                <span class="text-[#c2cab0]">Загальна площа:</span>
+                <span class="text-[#dae2fd] font-semibold">24 500 м²</span>
+              </div>
+              <div class="flex justify-between border-b border-[#424936]/30 pb-1">
+                <span class="text-[#c2cab0]">Актова зала:</span>
+                <span class="text-[#dae2fd] font-semibold">420 місць (автентичні полотна Матейка)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[#c2cab0]">Охоронний номер:</span>
+                <span class="text-[#ccff80] font-semibold">№ 1251 (Національне значення)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="p-4 bg-[#131b2e]/70 border border-[#424936]/40 rounded-xl">
+            <div class="text-xs font-mono font-bold text-[#adc6ff] mb-3 uppercase tracking-wider">КОНСТРУКЦІЇ ТА МАТЕРІАЛИ</div>
+            <div class="space-y-2 text-xs font-mono">
+              <div class="flex justify-between border-b border-[#424936]/30 pb-1">
+                <span class="text-[#c2cab0]">Фундамент:</span>
+                <span class="text-[#dae2fd] font-semibold">Бутовий камінь, вапняковий розчин</span>
+              </div>
+              <div class="flex justify-between border-b border-[#424936]/30 pb-1">
+                <span class="text-[#c2cab0]">Стіни:</span>
+                <span class="text-[#dae2fd] font-semibold">Австрійська повнотіла цегла</span>
+              </div>
+              <div class="flex justify-between border-b border-[#424936]/30 pb-1">
+                <span class="text-[#c2cab0]">Перекриття:</span>
+                <span class="text-[#dae2fd] font-semibold">Склепіння Клейна, металеві балки</span>
+              </div>
+              <div class="flex justify-between border-b border-[#424936]/30 pb-1">
+                <span class="text-[#c2cab0]">Фасадне оздоблення:</span>
+                <span class="text-[#dae2fd] font-semibold">Тесаний тернопільський пісковик, руст</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[#c2cab0]">Скульптурна група:</span>
+                <span class="text-[#dae2fd] font-semibold">Інженерія, Архітектура, Механіка (Л. Марконі)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="p-4 bg-[#131b2e]/70 border border-[#424936]/40 rounded-xl md:col-span-2">
+            <div class="text-xs font-mono font-bold text-[#ccff80] mb-3 uppercase tracking-wider">ІНЖЕНЕРНІ СИСТЕМИ & ТЕХНОЛОГІЇ</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
+              <div class="p-2.5 bg-[#0b1326]/50 rounded-lg border border-[#424936]/30">
+                <span class="text-[#c2cab0] block text-[11px]">Опалення та вентиляція:</span>
+                <span class="text-[#dae2fd] font-medium">Гравітаційна вентиляція + автономний теплопункт</span>
+              </div>
+              <div class="p-2.5 bg-[#0b1326]/50 rounded-lg border border-[#424936]/30">
+                <span class="text-[#c2cab0] block text-[11px]">Акустика зали Матейка:</span>
+                <span class="text-[#dae2fd] font-medium">Природна реверберація 1.6 с (автентичний розрахунок)</span>
+              </div>
+              <div class="p-2.5 bg-[#0b1326]/50 rounded-lg border border-[#424936]/30">
+                <span class="text-[#c2cab0] block text-[11px]">Освітлення сходів:</span>
+                <span class="text-[#dae2fd] font-medium">Природний світловий ліхтар (купольний атріум)</span>
+              </div>
+              <div class="p-2.5 bg-[#0b1326]/50 rounded-lg border border-[#424936]/30">
+                <span class="text-[#c2cab0] block text-[11px]">Моніторинг стану:</span>
+                <span class="text-[#dae2fd] font-medium">Постійний геодезичний контроль несучих конструкцій</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. HISTORY SECTION -->
+    <section id="history" class="flex flex-col gap-5">
+      <div class="glass-card rounded-2xl p-6 border border-[#8c947c]/30">
+        <h2 class="text-xl font-bold font-mono text-[#dae2fd] mb-6 flex items-center gap-2">
+          <i data-lucide="history" class="w-5 h-5 text-[#ccff80]"></i>
+          <span>ХРОНОЛОГІЯ ТА ВІХИ СПАДЩИНИ (1816 – 2026)</span>
+        </h2>
+
+        <div class="relative border-l-2 border-[#424936] ml-3 pl-6 space-y-6">
+          <div class="relative">
+            <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-[#ccff80] border-4 border-[#0b1326]"></div>
+            <div class="text-xs font-mono font-bold text-[#ccff80]">1816 РІК</div>
+            <h3 class="text-base font-bold text-[#dae2fd] mt-0.5">Заснування Цісарсько-королівської реальної школи</h3>
+            <p class="text-xs sm:text-sm text-[#c2cab0] mt-1">
+              Декрет австрійського імператора Франца I про створення технічного навчального закладу у Львові.
+            </p>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-[#adc6ff] border-4 border-[#0b1326]"></div>
+            <div class="text-xs font-mono font-bold text-[#adc6ff]">1873 – 1877 РОКИ</div>
+            <h3 class="text-base font-bold text-[#dae2fd] mt-0.5">Будівництво головного корпусу</h3>
+            <p class="text-xs sm:text-sm text-[#c2cab0] mt-1">
+              Проєктування і зведення монументальної будівлі під керівництвом ректора та професора Юліана Захаревича.
+            </p>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-[#dae2fd] border-4 border-[#0b1326]"></div>
+            <div class="text-xs font-mono font-bold text-[#dae2fd]">1884 РІК</div>
+            <h3 class="text-base font-bold text-[#dae2fd] mt-0.5">Картини Яна Матейка в Актовому залі</h3>
+            <p class="text-xs sm:text-sm text-[#c2cab0] mt-1">
+              Встановлення 11 алегоричних полотен художнього циклу «Тріумф людського поступу».
+            </p>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-[#ccff80] border-4 border-[#0b1326] animate-pulse"></div>
+            <div class="text-xs font-mono font-bold text-[#ccff80]">2026 РІК — СУЧАСНІСТЬ</div>
+            <h3 class="text-base font-bold text-[#dae2fd] mt-0.5">Цифрова паспортизація та верифікація</h3>
+            <p class="text-xs sm:text-sm text-[#c2cab0] mt-1">
+              Інтеграція NFC-чіпів, лазерного контролю та занесення архітектурного паспорта споруди до сучасного реєстру Model_Passport.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ANALYTICS SECTION -->
+    <section id="analytics" class="flex flex-col gap-5">
+      <div class="glass-card rounded-2xl p-6 border border-[#8c947c]/30">
+        <h2 class="text-xl font-bold font-mono text-[#dae2fd] mb-4 flex items-center gap-2">
+          <i data-lucide="bar-chart-3" class="w-5 h-5 text-[#ccff80]"></i>
+          <span>СТАТИСТИКА ТА АКАДЕМІЧНІ ПОКАЗНИКИ 2026</span>
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+          <div class="p-4 bg-[#131b2e]/80 border border-[#424936]/40 rounded-xl text-center">
+            <span class="text-xs font-mono text-[#c2cab0] uppercase block mb-1">Топ-200 Україна</span>
+            <span class="text-3xl font-extrabold font-mono text-[#ccff80]">#1</span>
+            <span class="block text-[11px] font-mono text-[#c2cab0] mt-1">Лідер серед ЗВО України</span>
+          </div>
+          <div class="p-4 bg-[#131b2e]/80 border border-[#424936]/40 rounded-xl text-center">
+            <span class="text-xs font-mono text-[#c2cab0] uppercase block mb-1">Консолідований</span>
+            <span class="text-3xl font-extrabold font-mono text-[#ccff80]">#3</span>
+            <span class="block text-[11px] font-mono text-[#c2cab0] mt-1">Топ-3 національного рейтингу</span>
+          </div>
+          <div class="p-4 bg-[#131b2e]/80 border border-[#424936]/40 rounded-xl text-center">
+            <span class="text-xs font-mono text-[#c2cab0] uppercase block mb-1">Студентська спільнота</span>
+            <span class="text-3xl font-extrabold font-mono text-[#adc6ff]">32 651</span>
+            <span class="block text-[11px] font-mono text-[#c2cab0] mt-1">Студентів університету</span>
+          </div>
+          <div class="p-4 bg-[#131b2e]/80 border border-[#424936]/40 rounded-xl text-center">
+            <span class="text-xs font-mono text-[#c2cab0] uppercase block mb-1">Інститутів</span>
+            <span class="text-3xl font-extrabold font-mono text-[#dae2fd]">16</span>
+            <span class="block text-[11px] font-mono text-[#c2cab0] mt-1">Навчально-наукових підрозділів</span>
+          </div>
+        </div>
+
+        <div class="mt-6 p-4 bg-[#131b2e]/50 border border-[#424936]/30 rounded-xl">
+          <div class="text-xs font-mono text-[#c2cab0] uppercase tracking-wider mb-2">Національні та міжнародні позиції:</div>
+          <ul class="text-xs font-mono space-y-2 text-[#dae2fd]">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#ccff80]"></span>
+              <span><strong>Топ-200 Україна (2026):</strong> #1 місце серед усіх закладів вищої освіти України</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#ccff80]"></span>
+              <span><strong>QS World University Rankings:</strong> Один із лідерів інженерної та IT-освіти Східної Європи</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#ccff80]"></span>
+              <span><strong>Scopus / Наукометрія:</strong> Найвищі показники цитованості технічних публікацій</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-auto border-t border-[#424936]/30 py-8 px-4 text-center text-xs font-mono text-[#c2cab0]">
+    <div class="flex items-center justify-center gap-2 mb-1">
+      <span class="font-bold text-[#dae2fd]">Model_Passport</span>
+      <span>•</span>
+      <span>Львівська політехніка 1816–2026</span>
+    </div>
+    <div class="text-[11px] opacity-75">
+      Офіційний цифровий паспорт архітектурної пам'ятки
+    </div>
+  </footer>
+
+  <!-- Script Logic -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Audio Guide Voice Synthesis
+    let isPlayingAudio = false;
+    function toggleAudioGuide() {
+      const btn = document.getElementById('audio-btn');
+      if (isPlayingAudio) {
+        window.speechSynthesis?.cancel();
+        isPlayingAudio = false;
+        btn.innerHTML = '<i data-lucide="volume-2" class="w-4 h-4"></i>';
+        btn.classList.remove('bg-[#ccff80]', 'text-[#0b1326]');
+        lucide.createIcons();
+      } else {
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+          const text = "Головний корпус Львівської політехніки. Пам'ятка архітектури національного значення. Збудований у 1873-1877 роках за проєктом архітектора Юліана Захаревича у стилі неоренесанс.";
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = 'uk-UA';
+          utterance.onend = () => {
+            isPlayingAudio = false;
+            btn.innerHTML = '<i data-lucide="volume-2" class="w-4 h-4"></i>';
+            btn.classList.remove('bg-[#ccff80]', 'text-[#0b1326]');
+            lucide.createIcons();
+          };
+          window.speechSynthesis.speak(utterance);
+          isPlayingAudio = true;
+          btn.innerHTML = '<i data-lucide="volume-x" class="w-4 h-4"></i>';
+          btn.classList.add('bg-[#ccff80]', 'text-[#0b1326]');
+          lucide.createIcons();
+        }
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Model Passport",
+  "description": "Digital Passport and architectural archive for Lviv Polytechnic National University.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
