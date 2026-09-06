@@ -20,7 +20,7 @@ export const Header: React.FC<HeaderProps> = ({
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
   const handleDownloadHtml = () => {
-    window.open('/passport.html', '_blank');
+    window.open('./passport.html', '_blank');
   };
 
   return (
